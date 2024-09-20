@@ -7,7 +7,9 @@ services:
     volumes:
       - ../:/workspaces/faststream:cached
     command: sleep infinity
-    network_mode: "host"
+    # network_mode: "host"
+    networks:
+      - faststream-network
 
   kafka-faststream:  # nosemgrep
     image: bitnami/kafka:3.5.0
